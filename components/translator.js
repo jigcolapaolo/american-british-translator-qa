@@ -59,11 +59,11 @@ class Translator {
                 continue
             }
 
-            const timeRegex = /^(0[0-9]|1[0-9]|2[0-3])[:.]([0-5][0-9])$/
-            const timeMatch = timeRegex.test(textArray[i])
+            const timeRegex = /(^|\s)([0-9]|1[0-9]|2[0-3])[:.]([0-5][0-9])/;
+            const match = textArray[i].match(timeRegex);
 
-            if (timeMatch) {
-                newTextArray.push(this.formatTime(textArray[i]))
+            if (match) {
+                newTextArray.push(this.formatTime(match[0]))
                 continue
             }
 
@@ -110,11 +110,11 @@ class Translator {
                 continue
             }
 
-            const timeRegex = /^(0[0-9]|1[0-9]|2[0-3])[:.]([0-5][0-9])$/
-            const timeMatch = timeRegex.test(textArray[i])
+            const timeRegex = /(^|\s)([0-9]|1[0-9]|2[0-3])[:.]([0-5][0-9])/;
+            const match = textArray[i].match(timeRegex);
 
-            if (timeMatch) {
-                newTextArray.push(this.formatTime(textArray[i]))
+            if (match) {
+                newTextArray.push(this.formatTime(match[0]))
                 continue
             }
 

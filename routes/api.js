@@ -17,7 +17,6 @@ module.exports = function (app) {
 
 
       const translation = translator.translate(text, locale)
-      console.log(JSON.stringify({ text, translation }));
 
       res.json({ text, translation })
     });
